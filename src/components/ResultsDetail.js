@@ -2,6 +2,9 @@ import React from 'react';
 import {View, Image, Text, StyleSheet} from "react-native";
 
 const ResultsDetail = ({result}) => {
+    if (result.image_url == null || result.image_url.length < 10) {
+        return null
+    }
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{uri: result.image_url}}/>
